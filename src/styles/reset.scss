@@ -1,0 +1,66 @@
+/* 1. 解决不同浏览器的默认样式差异 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. 取消列表默认样式 */
+ul, ol {
+  list-style: none;
+}
+
+/* 3. 统一字体、颜色、背景 */
+body {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+/* 4. 链接去除默认样式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. 图片自适应 */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* 6. 清除 button 默认样式 */
+button, input, textarea {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* 7. 让表单元素继承字体 */
+input, textarea, select, button {
+  font: inherit;
+}
+
+/* 8. 解决 iOS 点击无反馈 */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 9. 设置根元素，方便 `rem` 适配 */
+html {
+  font-size: 16px;
+}
+
+/* 10. 解决移动端 300ms 点击延迟 */
+body {
+  touch-action: manipulation;
+}
+
+/* 11. 让 flex 容器默认填充父级 */
+html, body {
+  height: 100%;
+}
