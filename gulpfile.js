@@ -12,9 +12,9 @@ import rev from "gulp-rev";
 import revRewrite from "gulp-rev-rewrite";
 import autoprefixer from "autoprefixer";
 import fs from "fs";
-import concat from 'gulp-concat';
+import concat from "gulp-concat";
 import pxToRem from "postcss-pxtorem";
-import buffer from 'vinyl-buffer';
+import buffer from "vinyl-buffer";
 
 const sass = gulpSass(dartSass);
 const isDev = process.env.NODE_ENV === "development";
@@ -40,32 +40,37 @@ function getManifest() {
 
 // 编译 SCSS
 export function compileSCSS() {
-    let stream = gulp.src("src/styles/*.scss").pipe(concat('index.css')); // 使用 buffer 以支持二进制文件
+    let stream = gulp.src("src/styles/*.scss").pipe(concat("index.css"));
 
     if (isDev) {
         stream = stream.pipe(sourcemaps.init());
     }
 
-    stream = stream.pipe(sass().on("error", sass.logError)).pipe(postcss(postcssPlugins));
+    stream = stream
+        .pipe(sass().on("error", sass.logError))
+        .pipe(postcss(postcssPlugins));
 
     if (!isDev) {
         stream = stream
             .pipe(cleanCSS())
-            .pipe(rev()) // 添加 hash
+            .pipe(rev())
             .pipe(gulp.dest("dist/styles"))
             .pipe(rev.manifest(manifestPath, { merge: true }))
             .pipe(gulp.dest("."));
     } else {
-        stream = stream.pipe(sourcemaps.write(".")).pipe(gulp.dest("dist/styles"));
+        stream = stream
+            .pipe(sourcemaps.write("."))
+            .pipe(gulp.dest("dist/styles"));
     }
 
     return stream;
 }
 
+// 编译字体
 export function compileFont() {
     return gulp
-        .src("src/fonts/**/*.{woff,woff2,ttf,otf,eot,svg}", { buffer: false }) // 使用 stream 模式读取
-        .pipe(buffer()) // 强制转成 Buffer，确保写入二进制不损坏
+        .src("src/fonts/**/*.{woff,woff2,ttf,otf,eot,svg}", { buffer: false })
+        .pipe(buffer())
         .pipe(gulp.dest("dist/fonts"));
 }
 
@@ -85,10 +90,12 @@ export function minifyHTML() {
 // 压缩合并 JS
 export function minifyJS() {
     let stream = gulp.src(["src/scripts/*.js", "!src/scripts/config.js"])
-        .pipe(concat('bundle.js'));  // 合并成 bundle.js
+        .pipe(concat("bundle.js"));
+
     if (isDev) {
         stream = stream.pipe(sourcemaps.init());
     }
+
     if (!isDev) {
         stream = stream
             .pipe(uglify())
@@ -97,16 +104,22 @@ export function minifyJS() {
             .pipe(rev.manifest(manifestPath, { merge: true }))
             .pipe(gulp.dest("."));
     } else {
-        stream = stream.pipe(sourcemaps.write(".")).pipe(gulp.dest("dist/scripts"));
+        stream = stream
+            .pipe(sourcemaps.write("."))
+            .pipe(gulp.dest("dist/scripts"));
     }
+
     return stream;
 }
-// 移动 config.js 文件（可选）
+
+// 移动 config.js 文件
 export function moveConfig() {
     let stream = gulp.src("src/scripts/config.js");
+
     if (isDev) {
         stream = stream.pipe(sourcemaps.init());
     }
+
     if (!isDev) {
         stream = stream
             .pipe(uglify())
@@ -115,12 +128,15 @@ export function moveConfig() {
             .pipe(rev.manifest(manifestPath, { merge: true }))
             .pipe(gulp.dest("."));
     } else {
-        stream = stream.pipe(sourcemaps.write(".")).pipe(gulp.dest("dist/scripts"));
+        stream = stream
+            .pipe(sourcemaps.write("."))
+            .pipe(gulp.dest("dist/scripts"));
     }
-    return stream
+
+    return stream;
 }
 
-// 拷贝图片（可选 hash）
+// 拷贝图片
 export function optimizeImages() {
     let stream = gulp.src("src/images/**/*", { encoding: false });
 
@@ -173,14 +189,27 @@ export function watchFiles() {
 // 开发模式任务
 export const dev = gulp.series(
     clean,
-    gulp.parallel(compileFont, optimizeImages, compileSCSS, minifyJS, moveConfig, minifyHTML),
+    gulp.parallel(
+        compileFont,
+        optimizeImages,
+        compileSCSS,
+        minifyJS,
+        moveConfig,
+        minifyHTML
+    ),
     gulp.parallel(startServer, watchFiles)
 );
 
 // 生产构建任务
 export const build = gulp.series(
     clean,
-    gulp.parallel(compileFont, optimizeImages, compileSCSS, minifyJS, moveConfig),
+    gulp.parallel(
+        compileFont,
+        optimizeImages,
+        compileSCSS,
+        minifyJS,
+        moveConfig
+    ),
     gulp.parallel(minifyHTML)
 );
 
