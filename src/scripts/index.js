@@ -1,5 +1,4 @@
-
-
+import QRCode from 'qrcode';
 
 function handleDownloadApk () {
     const a = document.createElement('a');
@@ -11,9 +10,9 @@ function handleDownloadApk () {
 }
 
 window.onload = function() {
-    new QRious({
-        element: document.getElementById("qrcode"),
-        value: window.location.href,
-        size: 200,
+    const canvas = document.getElementById("qrcode");
+    QRCode.toCanvas(canvas, window.location.href, function (error) {
+        if (error) console.error(error);
+        else console.log("二维码生成成功");
     });
 };

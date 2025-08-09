@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development npx gulp dev",
-    "build": "NODE_ENV=production npx gulp build"
+    "dev": "cross-env NODE_ENV=development vite dev",
+    "build": "cross-env NODE_ENV=production vite build"
   },
   "keywords": [],
   "author": "",
@@ -20,25 +20,12 @@
     "autoprefixer": "^10.4.20",
     "cross-env": "^7.0.3",
     "del": "^8.0.0",
-    "gulp": "^5.0.0",
-    "gulp-cached": "^1.1.1",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^9.1.0",
-    "gulp-postcss": "^10.0.0",
-    "gulp-rev": "^11.0.0",
-    "gulp-rev-rewrite": "^6.0.0",
-    "gulp-sass": "^6.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-webserver": "^0.9.1",
-    "imagemin-webp": "^8.0.0",
-    "merge-stream": "^2.0.0",
     "postcss": "8",
     "postcss-pxtorem": "^6.1.0",
     "sass": "^1.85.0",
-    "vinyl-buffer": "^1.0.1"
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
   }
 }
