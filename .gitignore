@@ -24,3 +24,4 @@ stats.html
 *.sln
 *.sw?
 *.zip
+/pnpm-lock.yaml
