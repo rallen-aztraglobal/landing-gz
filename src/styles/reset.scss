@@ -8,7 +8,8 @@
 }
 
 /* 2. 取消列表默认样式 */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -33,7 +34,9 @@ img {
 }
 
 /* 6. 清除 button 默认样式 */
-button, input, textarea {
+button,
+input,
+textarea {
   border: none;
   outline: none;
   background: none;
@@ -41,12 +44,16 @@ button, input, textarea {
 }
 
 /* 7. 让表单元素继承字体 */
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   font: inherit;
 }
 
 /* 8. 解决 iOS 点击无反馈 */
-a, button {
+a,
+button {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -61,6 +68,7 @@ body {
 }
 
 /* 11. 让 flex 容器默认填充父级 */
-html, body {
+html,
+body {
   height: 100%;
 }
