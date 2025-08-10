@@ -16,7 +16,22 @@
 <script type="module" src="./scripts/utils.js"></script>
 <script type="module" src="./scripts/index.js"></script>
 <body>
-<button onclick="handleDownloadApk()">下载</button>
-<canvas id="qrcode"></canvas>
+<div class="main">
+  <div class="scan-view">
+    <div class="step-left"></div>
+    <img src="assets/icons/right-arrow.svg" alt="right-arrow" />
+    <canvas id="qrcode"></canvas>
+    <img src="assets/icons/right-arrow.svg" alt="right-arrow" />
+    <div class="step-right"></div>
+    <button onclick="handleDownloadApk()">Install Now</button>
+  </div>
+  <ul>
+    <li><img src="assets/images/JL_500x500_GameID197_en-US@2x.png" alt=""></li>
+    <li><img src="assets/images/JL_500x500_GameID229_en-US@2x.png" alt=""></li>
+    <li><img src="assets/images/JL_500x500_GameID300_en-US@2x.png" alt=""></li>
+    <li><img src="assets/images/Super-Ace-Jackpot_500x500@2x.png" alt=""></li>
+    <li><img src="assets/images/Game-Logos_PUSOY-PLUS_938@2x.png" alt=""></li>
+  </ul>
+</div>
 </body>
 </html>

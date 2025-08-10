@@ -1,7 +1,148 @@
 body {
-  button {
-    width: 80%;
-    height: 44px;
-    color: #333333;
+  .main {
+    width: 100%;
+    height: 100%;
+    background: url("../assets/images/gp-background-edit@2x.png") no-repeat;
+    background-position: top center;
+    background-size: cover;
+    ul {
+      display: flex;
+      gap: 20px;
+      position: absolute;
+      left: 52%;
+      transform: translateX(-50%);
+      top: calc(100% - 200px);
+      li {
+        width: 168px;
+        height: 168px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .scan-view {
+      width: 800px;
+      display: flex;
+      position: absolute;
+      left: 52%;
+      top: 52%;
+      justify-content: center;
+      transform: translateX(-50%);
+      &:after {
+        content: '';
+        display: block;
+        width: 228px;
+        height: 50px;
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url("../assets/images/Scan-QR-code-to-install@2x.png") no-repeat center center;
+        background-size: 100%;
+      }
+      .step-left, .step-right {
+        width: 144px;
+        height: 235px;
+      }
+      img {
+        display: block;
+        margin: 0 40px;
+        position: relative;
+        top: -50px;
+      }
+      canvas {
+        width: 160px!important;
+        height: 160px!important;
+        box-shadow: 3px 5px 3px #0000004D;
+        border: 4px solid #C87018;
+        border-radius: 2px;
+      }
+      .step-left {
+        background: url("../assets/images/hand-phone-scan@2x.png") no-repeat top center;
+        background-size: 100%;
+      }
+      .step-right {
+        background: url("../assets/images/3step-hand-install@2x.png") no-repeat top center;
+        background-size: 100%;
+      }
+      button {
+        position: absolute;
+        bottom: -60px;
+        width: 300px;
+        height: 72px;
+        background: linear-gradient(180deg, #DF0305, #A50300);
+        border: 2px solid #FFBC7A;
+        border-radius: 15px;
+        opacity: 1;
+        font-size: 28px;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          filter: brightness(1.2);
+        }
+        &:active {
+          filter: brightness(1);
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    .main {
+      background: url("../assets/images/gp-phone-background@2x.png") no-repeat top center;
+      background-size: cover;
+      &:after {
+        width: 120%;
+        content: "";
+        height: calc(120vw * 1066 / 705);
+        background: url("../assets/images/Phone-header@2x.png") no-repeat top center;
+        background-size: 100%;
+        position: absolute;
+        left: -10%;
+        z-index: 0;
+      }
+      .scan-view {
+        top: 30%;
+        z-index: 1;
+        left: 50%;
+        .step-left, .step-right {
+          width: 101px;
+          height: 165px;
+        }
+        canvas {
+          width: 95px!important;
+          height: 95px!important;
+        }
+        img {
+          width: 26px;
+          margin: 0 16px;
+          top: -30px;
+        }
+        &:after {
+          width: 166px;
+        }
+        button {
+          width: 208px;
+          height: 58px;
+          font-size: 22px;
+        }
+      }
+      ul {
+        width: 100%;
+        flex-wrap: wrap;
+        left: 50%;
+        justify-content: center;
+        top: auto;
+        bottom: 30px;
+        li {
+          width: 102px!important;
+          height: 102px!important;
+        }
+      }
+    }
   }
 }
