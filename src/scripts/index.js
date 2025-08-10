@@ -15,6 +15,6 @@ window.onload = function () {
     margin: 1 // 控制白边宽度（单位是模块数，默认是 4）
   },function (error) {
     if (error) console.error(error)
-    else console.log('二维码生成成功')
   })
+  document.getElementById('download').addEventListener('click', handleDownloadApk)
 }
