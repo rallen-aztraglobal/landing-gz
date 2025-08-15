@@ -1,4 +1,5 @@
 import QRCode from 'qrcode'
+import { initGtag } from './utils.js'
 
 let downloadUrl = ''
 
@@ -7,19 +8,23 @@ function getDownloadUrl() {
     const data = await res.json()
     downloadUrl = data.url
     if (downloadUrl.includes('gpgzmkk046')) {
-      gtag('event', 'conversion', {
-        allow_custom_scripts: true,
-        u1: window.location.href,
-        u2: document.referrer,
-        send_to: 'DC-15643385/invmedia/bingo0+standard',
+      initGtag(() => {
+        gtag('event', 'conversion', {
+          allow_custom_scripts: true,
+          u1: window.location.href,
+          u2: document.referrer,
+          send_to: 'DC-15643385/invmedia/bingo0+standard',
+        })
       })
     }
     if (downloadUrl.includes('bpom3405')) {
-      gtag('event', 'conversion', {
-        allow_custom_scripts: true,
-        u1: window.location.href,
-        u2: document.referrer,
-        send_to: 'DC-15643385/invmedia/bingo000+standard',
+      initGtag(() => {
+        gtag('event', 'conversion', {
+          allow_custom_scripts: true,
+          u1: window.location.href,
+          u2: document.referrer,
+          send_to: 'DC-15643385/invmedia/bingo000+standard',
+        })
       })
     }
   })
