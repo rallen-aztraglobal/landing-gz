@@ -10,7 +10,7 @@ body {
       display: block;
       position: absolute;
       left: -7%;
-      background: url("../assets/images/gp-background-edit@2x.png") no-repeat;
+      background: url("../assets/images/gp-background-edit@2x.jpg") no-repeat;
       background-position: top center;
       background-size: cover;
       z-index: 0;
@@ -109,7 +109,7 @@ body {
 @media (max-width: 768px) {
   body {
     .main {
-      background: url("../assets/images/gp-phone-background@2x.png") no-repeat top center;
+      background: url("../assets/images/gp-phone-background@2x.jpg") no-repeat top center;
       background-size: cover;
       &:after {
         width: 120%;
@@ -213,7 +213,7 @@ body {
   body {
     .main {
       height: 100vw;
-      background: url("../assets/images/gp-phone-background@2x.png") no-repeat top center;
+      background: url("../assets/images/gp-phone-background@2x.jpg") no-repeat top center;
       background-size: cover;
       position: relative;
       &:after {
