@@ -18,8 +18,6 @@ body {
       width: 460px;
       position: absolute;
       top: 48%;
-      right: 15%;
-      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -58,7 +56,48 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 500px) and (max-width: 768px) {
+  body {
+    .main {
+      .main-image {
+        width: 60vw;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .download-wrapper {
+        width: 100%;
+        left: 50%;
+        top: 63%;
+        height: 36%;
+        transform: translateX(-50%);
+        button {
+          width: 294px;
+          height: 70px;
+          font-size: 28px;
+        }
+        .pagcor {
+          width: 90%;
+          height: 200px;
+          position: fixed;
+          bottom: 30px;
+          background: url("../assets/images/pagcor@2x.png") no-repeat center bottom;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+  @keyframes float {
+    0% {
+      top: 10%;
+    }
+    100% {
+      top: 12%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
   body {
     .main {
       .main-image {
@@ -96,5 +135,27 @@ body {
         top: 12%;
       }
     }
+  }
+}
+
+/* 默认 PC 大屏 (>=1440px) 用原始比例 */
+.download-wrapper {
+  right: 15%;
+  transform: translateY(-50%) scale(1);
+}
+
+/* 中等屏幕 (1025px ~ 1439px) 稍微缩小 */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .download-wrapper {
+    transform: translateY(-50%) scale(0.9);
+    right: 10%;
+  }
+}
+
+/* 平板横屏 (769px ~ 1024px) 缩小更多 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .download-wrapper {
+    transform: translateY(-50%) scale(0.65);
+    right: 3%;
   }
 }
