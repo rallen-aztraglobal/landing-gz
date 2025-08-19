@@ -33,7 +33,7 @@ export function initGtag(callback) {
       gtag('js', new Date());
       gtag('config', '${trackingId}');
     `
-    document.body.insertBefore(inlineScript, document.body.firstChild)
+    document.head.appendChild(inlineScript, document.body.firstChild)
 
     console.log(`✅ gtag init injected: ${trackingId}`)
     callback && callback()
