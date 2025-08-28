@@ -56,8 +56,8 @@ export default defineConfig(({ mode }) => {
                     entryFileNames: "scripts/[name]-[hash].js",
                     manualChunks(id) {
                         // 这里判断路径，把 config.js 单独拆成一个 chunk
-                        if (id.includes("config.js")) {
-                            return 'config'
+                        if (id.includes("af_smart_script")) {
+                            return 'af_smart_script'
                         }
                         return 'main'
                     }
