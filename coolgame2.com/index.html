@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Get up to 100% bonus</title><script>// Function to parse URL parameters
+    function getQueryParams() {
+      const params = {};
+      const queryString = window.location.search.substring(1);
+      const vars = queryString.split("&");
+      for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split("=");
+        params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
+      }
+      return params;
+    }
+    // Retrieve query parameters from the current URL
+    const queryParams = getQueryParams();
+    // Construct the AppsFlyer attribution link with the retrieved parameters
+    const appsFlyerBaseUrl = "https://app.appsflyer.com/com.bingoplus.bpom3404";
+    const appsFlyerParams = new URLSearchParams({
+      pid: "propellerads_int",
+      af_siteid: queryParams.zoneid || "",
+      c: queryParams.campaignid || "",
+      af_sub_siteid: queryParams.subzone_id || "",
+      af_sub1: queryParams.os || "",
+      af_sub2: queryParams.browser || "",
+      af_sub3: queryParams.osversion || "",
+      af_sub4: queryParams.carrier || "",
+      af_click_lookback: "7d",
+      clickid: queryParams.SUBID || ""
+    });
+    // Update the href attribute of the CTA link with the constructed AppsFlyer URL
+    document.addEventListener("DOMContentLoaded", function () {
+      const ctaLink = document.getElementById("https://app.appsflyer.com/com.bingoplus.bpom3404?pid=propellerads_int&af_siteid={zoneid}&af_click_lookback=7d&clickid=${SUBID}&af_r=https://www.jack8881.com/apk/com.bingoplus.bpom3404.apk");
+      if (ctaLink) {
+        ctaLink.href = `${appsFlyerBaseUrl}?${appsFlyerParams.toString()}`;
+      }
+    });</script><script type="module" crossorigin src="./scripts/main-CmOCWSoe.js"></script><link rel="stylesheet" crossorigin href="./styles/main-C_QMi9f1.css"></head><body><div class="main"><div class="scan-view"><div class="step-left"></div><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='51.5'%20height='42.844'%20viewBox='0%200%2051.5%2042.844'%3e%3cg%20id='right-arrow'%20transform='translate(0%20-41.346)'%3e%3cg%20id='Group_1'%20data-name='Group%201'%20transform='translate(0%2041.346)'%3e%3cpath%20id='Path_1'%20data-name='Path%201'%20d='M50.677,60.767l-18.6-18.6a2.827,2.827,0,0,0-3.986,0L26.4,43.857a2.8,2.8,0,0,0-.823,1.993,2.853,2.853,0,0,0,.823,2.016l10.85,10.874H2.782A2.751,2.751,0,0,0,0,61.512V63.9a2.856,2.856,0,0,0,2.782,2.894H37.377L26.4,77.729a2.791,2.791,0,0,0,0,3.958l1.689,1.684a2.827,2.827,0,0,0,3.986,0l18.6-18.6a2.843,2.843,0,0,0,0-4Z'%20transform='translate(0%20-41.346)'%20fill='%23fff'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="right-arrow"/><canvas id="qrcode"></canvas><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='51.5'%20height='42.844'%20viewBox='0%200%2051.5%2042.844'%3e%3cg%20id='right-arrow'%20transform='translate(0%20-41.346)'%3e%3cg%20id='Group_1'%20data-name='Group%201'%20transform='translate(0%2041.346)'%3e%3cpath%20id='Path_1'%20data-name='Path%201'%20d='M50.677,60.767l-18.6-18.6a2.827,2.827,0,0,0-3.986,0L26.4,43.857a2.8,2.8,0,0,0-.823,1.993,2.853,2.853,0,0,0,.823,2.016l10.85,10.874H2.782A2.751,2.751,0,0,0,0,61.512V63.9a2.856,2.856,0,0,0,2.782,2.894H37.377L26.4,77.729a2.791,2.791,0,0,0,0,3.958l1.689,1.684a2.827,2.827,0,0,0,3.986,0l18.6-18.6a2.843,2.843,0,0,0,0-4Z'%20transform='translate(0%20-41.346)'%20fill='%23fff'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="right-arrow"/><div class="step-right"></div><button id="download">Install Now</button></div><ul><li><img src="./images/JL_500x500_GameID197_en-US@2x-CyRdvWMM.png" alt=""></li><li><img src="./images/JL_500x500_GameID229_en-US@2x-ZXiAWJC7.png" alt=""></li><li><img src="./images/JL_500x500_GameID300_en-US@2x-DkUq1LFj.png" alt=""></li><li><img src="./images/Super-Ace-Jackpot_500x500@2x-p4CjOqW6.png" alt=""></li><li><img src="./images/Game-Logos_PUSOY-PLUS_938@2x-BdfggGry.png" alt=""></li></ul></div></body></html>
