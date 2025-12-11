@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    const vars = queryString.split("&");
+    for (let i = 0; i < vars.length; i++) {
+      const pair = vars[i].split("=");
+      params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
+    }
+    return params;
+  }
+
+  const queryParams = getQueryParams();
+
+  // === EDIT: Replace with your MMP tracking link base ===
+  const trackingBaseUrl = "https://app.appsflyer.com/com.bingopluswin.phpo";
+
+  // Add parameters you want to pass through
+  const finalUrl = new URL(trackingBaseUrl);
+  finalUrl.searchParams.set("pid", "propellerads_int");
+  finalUrl.searchParams.set("clickid", queryParams.SUBID || "");
+  finalUrl.searchParams.set("af_siteid", queryParams.zoneid || "");
+  // You can add more:
+  // finalUrl.searchParams.set("af_sub1", queryParams.os || "");
+  // finalUrl.searchParams.set("custom_param", queryParams.anything || "");
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const ctaButton = document.getElementById("download");
+    if (ctaButton) {
+      ctaButton.addEventListener("click", function () {
+        window.location.href = finalUrl.toString();
+      });
+    }
+  });
+</script>
   <meta charset="UTF-8" />
   <meta
           name="viewport"
