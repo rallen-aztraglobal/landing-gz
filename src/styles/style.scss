@@ -1,7 +1,353 @@
 body {
-  button {
-    width: 80%;
-    height: 44px;
-    color: #333333;
+  .main {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: no-repeat url('../assets/images/V1-1-background.png');
+    background-size: cover;
+    position: relative;
+    .logo {
+      position: absolute;
+      top: 0;
+      width: 466px;
+      left: 50%;
+      transform: translateX(-50%);
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .title {
+      width: 940px;
+      height: 130px;
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: url("../assets/images/Over Or Under.png") no-repeat center center;
+      background-size: contain;
+    }
+    .subtitle {
+      width: 504px;
+      height: 70px;
+      position: absolute;
+      top: 250px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: url("../assets/images/Start Strong With A.png") no-repeat center center;
+      background-size: contain;
+    }
+    .free {
+      width: 778px;
+      height: 250px;
+      position: absolute;
+      top: 350px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: url("../assets/images/FREE.png") no-repeat center center;
+      background-size: contain;
+    }
+    .bonus {
+      width: 228px;
+      height: 84px;
+      position: absolute;
+      top: 530px;
+      left: 50%;
+      z-index: 11;
+      transform: translateX(calc(-50% + 300px));
+      background: url("../assets/images/Group 1@2x.png") no-repeat center center;
+      background-size: contain;
+    }
+    .pagcor {
+      width: 916px;
+      height: 73px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      background: url("../assets/images/pagcor + 21-desktop.png") no-repeat center center;
+      background-size: contain;
+    }
+    .character {
+      width: 916px;
+      height: 573px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 1;
+      transform: translateX(-42%);
+      background: url("../assets/images/character.png") no-repeat center center;
+      background-size: contain;
+    }
+
+    .download {
+      width: 367px;
+      height: 88px;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transform: translateX(-50%);
+      transition: transform 0.3s ease-in-out;
+      background: url("../assets/images/V1-1-desktop-cta.png") no-repeat center center;
+      background-size: contain;
+      &:hover {
+        transform: translateX(-50%) scale(1.02);
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    .main {
+      background: url("../assets/images/V1-1-H5-background.png");
+      background-size: cover;
+      .logo {
+        height: 60px;
+        img {
+          width: auto;
+          margin: 0 auto;
+          height: 100%;
+        };
+      }
+      .title {
+        width: 72%;
+        height: 200px;
+        top: 80px;
+        background: url("../assets/images/Over OrUnder@2x.png") no-repeat center center;
+        background-size: contain;
+      }
+      .subtitle {
+        height: 50px;
+        top: 250px;
+      }
+      .free {
+        width: 90%;
+        top: 260px;
+      }
+      .bonus {
+        height: 64px;
+        top: 400px;
+        transform: translateX(calc(-50% + 110px));
+      }
+      .character {
+        height: 440px;
+        transform: translateX(calc(-50% + 58px));
+      }
+      .pagcor {
+        height: 60px;
+        background: url("../assets/images/pagcor + 21-H5@2x.png") no-repeat center center;
+        background-size: contain;
+      }
+      .download {
+        height: 60px;
+        bottom: 120px;
+      }
+    }
+  }
+}
+@media (min-width: 300px) and (max-width: 768px) {
+  body {
+    .main {
+      background: url("../assets/images/V1-1-H5-background.png");
+      background-size: cover;
+      .logo {
+        height: 60px;
+        img {
+          width: auto;
+          margin: 0 auto;
+          height: 100%;
+        };
+      }
+      .title {
+        width: 72%;
+        height: 200px;
+        top: 80px;
+        background: url("../assets/images/Over OrUnder@2x.png") no-repeat center center;
+        background-size: contain;
+      }
+      .subtitle {
+        height: 50px;
+        top: 250px;
+      }
+      .free {
+        width: 90%;
+        top: 260px;
+      }
+      .bonus {
+        height: 64px;
+        top: 400px;
+        transform: translateX(calc(-50% + 110px));
+      }
+      .character {
+        height: 480px;
+        transform: translateX(calc(-50% + 58px));
+      }
+      .pagcor {
+        height: 60px;
+        background: url("../assets/images/pagcor + 21-H5@2x.png") no-repeat center center;
+        background-size: contain;
+      }
+      .download {
+        height: 60px;
+        bottom: 120px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    .main {
+      .logo {
+        width: 284px!important;
+      }
+      .title {
+        height: 110px!important;
+        top: 100px!important;
+      }
+      .subtitle {
+        height: 60px;
+        top: 210px!important;
+      }
+      .free {
+        height: 200px;
+        top: 380px!important;
+      }
+      .bonus {
+        height: 104px;
+        top: 500px!important;
+        transform: translateX(calc(-50% + 220px));
+      }
+      .character {
+        height: 520px!important;
+        transform: translateX(calc(-50% + 40px));
+      }
+      .pagcor {
+        height: 60px;
+        transform: translateX(calc(-50% + 20px));
+      }
+      .download {
+        height: 70px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  body {
+    .main {
+      .logo {
+        width: 224px!important;
+      }
+      .title {
+        height: 90px!important;
+        top: 80px!important;
+      }
+      .subtitle {
+        height: 50px;
+        top: 150px!important;
+      }
+      .free {
+        height: 200px;
+        top: 200px!important;
+      }
+      .bonus {
+        height: 84px;
+        top: 180px!important;
+        transform: translateX(calc(-50% + 300px));
+      }
+      .character {
+        height: 320px!important;
+        transform: translateX(calc(-50% + 40px));
+      }
+      .pagcor {
+        height: 60px;
+        transform: translateX(calc(-50% + 20px));
+      }
+      .download {
+        height: 70px;
+      }
+    }
+  }
+}
+
+
+
+/* 手机横版 */
+@media (max-width: 1024px) and (orientation: landscape) {
+  body {
+    .main {
+      .logo {
+        width: 324px;
+      }
+      .title {
+        height: 90px;
+        top: 100px;
+      }
+      .subtitle {
+        height: 40px;
+        top: 180px;
+      }
+      .free {
+        height: 160px;
+        top: 250px;
+      }
+      .bonus {
+        height: 74px;
+        top: 350px;
+        transform: translateX(calc(-50% + 260px));
+      }
+      .character {
+        height: 420px;
+      }
+      .pagcor {
+        height: 60px;
+      }
+      .download {
+        height: 70px;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) and (max-width: 1400px) and (orientation: landscape) {
+  body {
+    .main {
+      position: relative;
+      .logo {
+        width: 354px;
+      }
+      .title {
+        height: 110px;
+        top: 100px;
+      }
+      .subtitle {
+        height: 50px;
+        top: 190px;
+      }
+      .free {
+        height: 200px;
+        top: 260px;
+      }
+      .bonus {
+        height: 84px;
+        top: 400px;
+        transform: translateX(calc(-50% + 300px));
+      }
+      .character {
+        height: 420px;
+      }
+      .pagcor {
+        height: 60px;
+      }
+      .download {
+        height: 70px;
+      }
+    }
   }
 }
