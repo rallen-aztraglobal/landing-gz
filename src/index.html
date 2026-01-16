@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript">
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const vars = queryString.split("&");
+            for (let i = 0; i < vars.length; i++) {
+                const pair = vars[i].split("=");
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
+            }
+            return params;
+        }
+
+        const queryParams = getQueryParams();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const link = document.querySelector('#download a');
+            if (link) {
+                let href = link.getAttribute('href') || '';
+
+                if (queryParams.SUBID) {
+                    href = href.replace('${SUBID}', encodeURIComponent(queryParams.SUBID));
+                }
+                if (queryParams.zoneid) {
+                    href = href.replace('{zoneid}', encodeURIComponent(queryParams.zoneid));
+                }
+
+                link.setAttribute('href', href);
+            }
+        });
+    </script>
   <meta charset="UTF-8" />
   <meta
     name="viewport"
